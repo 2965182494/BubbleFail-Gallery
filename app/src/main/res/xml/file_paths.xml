@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="bubble_tea_images"
+        path="Android/data/com.example.myapplication/files/Pictures" />
+    <external-files-path
+        name="bubble_tea_images"
+        path="Pictures" />
+    <cache-path
+        name="bubble_tea_images"
+        path="." />
+</paths> 

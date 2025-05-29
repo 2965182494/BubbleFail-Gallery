@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">奶茶记录</string>
+    <string name="bubble_fail_gallery">BubbleFail Gallery</string>
+    <string name="app_logo">应用图标</string>
+    
+    <!-- 登录页面 -->
+    <string name="sign_in_now">Sign in now</string>
+    <string name="please_sign_in">Please sign in to continue our app</string>
+    <string name="email">E-Mail</string>
+    <string name="password">Password</string>
+    <string name="toggle_password_visibility">切换密码可见性</string>
+    <string name="sign_in">Sign in</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="or_connect">Or connect</string>
+    <string name="social_login">社交媒体登录</string>
+    
+    <!-- 注册页面 -->
+    <string name="sign_up_now">Sign up now</string>
+    <string name="please_sign_up">Create an account to continue</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_account">Already have an account?</string>
+    
+    <!-- 错误提示 -->
+    <string name="error_email_empty">请输入电子邮件</string>
+    <string name="error_email_invalid">请输入有效的电子邮件</string>
+    <string name="error_password_empty">请输入密码</string>
+    <string name="error_confirm_password_empty">请输入确认密码</string>
+    <string name="error_password_match">密码不匹配</string>
+    <string name="error_login_failed">登录失败，请检查邮箱和密码</string>
+    <string name="error_register">注册失败，请稍后再试</string>
+    <string name="error_email_exists">该邮箱已注册</string>
+    <string name="success_register">注册成功</string>
+    
+    <!-- 主界面 -->
+    <string name="congratulations">Congratulations!!</string>
+    <string name="stayed_on_track_prefix">You\'ve stayed on track for</string>
+    <string name="stayed_on_track_suffix">times!</string>
+    <string name="cat_bubble_tea_image">猫咪奶茶图片</string>
+    <string name="cup_limit">5-cup limit</string>
+    <string name="cup_status">Drank: 3\nRemaining: 2</string>
+    <string name="bubble_tea_cup">奶茶杯</string>
+    
+    <!-- 底部导航 -->
+    <string name="home">首页</string>
+    <string name="calendar">日历</string>
+    <string name="add_record">添加记录</string>
+    <string name="statistics">Statistics</string>
+    <string name="profile">Profile</string>
+    
+    <!-- 日历界面 -->
+    <string name="havent_drunk_for">Haven\'t drunk for</string>
+    <string name="days_this_month">consecutive days this month</string>
+    <string name="no_records_yet">No records yet</string>
+    <string name="need_records_first">You need to track your bubble tea consumption first!</string>
+    <string name="cat_calendar_image">Cat Calendar Image</string>
+    <string name="previous_month">Previous Month</string>
+    <string name="next_month">Next Month</string>
+    <string name="drink_record">Drink Record</string>
+    <string name="bubble_tea_image">Bubble Tea Image</string>
+    
+    <!-- 添加记录界面 -->
+    <string name="add_bubble_tea_image">添加奶茶图片</string>
+    <string name="date">Date</string>
+    <string name="select_date">选择日期</string>
+    <string name="name">Name</string>
+    <string name="enter_bubble_tea_name">输入奶茶名称</string>
+    <string name="expense">Expense</string>
+    <string name="enter_price">输入价格</string>
+    <string name="sweetness">Sweetness</string>
+    <string name="enter_sweetness">输入甜度</string>
+    <string name="save">Save</string>
+    <string name="record_saved">记录已保存</string>
+    <string name="record_save_failed">保存失败，请重试</string>
+    
+    <!-- 图片上传相关 -->
+    <string name="select_image_source">选择图片来源</string>
+    <string name="take_photo">拍照</string>
+    <string name="choose_from_gallery">从图库选择</string>
+    <string name="permission_required">需要相机和存储权限以便上传奶茶图片</string>
+    <string name="permission_camera_rationale">需要相机权限来拍摄奶茶照片</string>
+    <string name="permission_storage_rationale">需要存储权限来保存奶茶图片</string>
+    <string name="image_save_failed">图片保存失败</string>
+    
+    <!-- 统计界面 -->
+    <string name="overview">Overview</string>
+    <string name="total_cups">Total Cups</string>
+    <string name="avg_interval_days">Average Interval Days</string>
+    <string name="total_expense">Total Expense</string>
+    <string name="avg_daily_amount">Average Daily Amount</string>
+    <string name="ranking">Ranking</string>
+    <string name="by_frequency">By Frequency</string>
+    
+    <!-- 个人主页 -->
+    <string name="avatar">User Avatar</string>
+    <string name="default_username">Bubble Tea Lover</string>
+    <string name="default_bio">A cup of bubble tea a day keeps the sadness away!</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="settings">Settings</string>
+    <string name="notifications">Notifications</string>
+    <string name="theme">Theme</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="language">Language</string>
+    <string name="chinese">Chinese</string>
+    <string name="english">English</string>
+    <string name="clear_data">Clear Data</string>
+    <string name="account">Account</string>
+    <string name="logout">Logout</string>
+    <string name="arrow_right">Arrow Right</string>
+    
+    <!-- 换装功能 -->
+    <string name="costume_title">Cat Costume</string>
+    <string name="costume_image">Cat Costume Image</string>
+    <string name="random_dress">Random dress</string>
+    <string name="back">Back</string>
+    <string name="costume_indicator">%1$d/%2$d</string>
+    <string name="reward_title">Congratulations!</string>
+    <string name="reward_message">You haven\'t drunk bubble tea for three days! We have a reward for you.</string>
+    <string name="reward_question">Do you want to try a new costume?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="previous_costume">上一个装扮</string>
+    <string name="next_costume">下一个装扮</string>
+    <string name="select_costume">选择当前装扮</string>
+</resources>

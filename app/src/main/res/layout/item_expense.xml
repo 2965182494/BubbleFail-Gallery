@@ -11,7 +11,7 @@
         android:id="@+id/iv_tea_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/bg_circle_yellow"
+        android:background="@color/white"
         android:contentDescription="@string/bubble_tea_image"
         android:padding="8dp"
         android:scaleType="centerCrop"

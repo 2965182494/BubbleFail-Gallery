@@ -141,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="@string/sign_up"
-        android:textColor="@color/primary_yellow"
+        android:textColor="#FF7029"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_no_account"
@@ -180,7 +180,7 @@
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/social_login"
-            android:src="@drawable/test"
+            android:src="@drawable/qq"
             android:background="@drawable/bg_social_button" />
 
         <!-- 社交媒体按钮2 -->
@@ -190,7 +190,7 @@
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/social_login"
-            android:src="@drawable/test"
+            android:src="@drawable/weixin"
             android:background="@drawable/bg_social_button" />
 
         <!-- 社交媒体按钮3 -->
@@ -199,7 +199,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:contentDescription="@string/social_login"
-            android:src="@drawable/test"
+            android:src="@drawable/phone"
             android:background="@drawable/bg_social_button" />
     </LinearLayout>
 

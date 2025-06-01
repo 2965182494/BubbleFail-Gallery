@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_cream"
+    android:background="#FAF1E7"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/congratulations"
-            android:textColor="@color/primary_yellow"
+            android:textColor="#FFCB43"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:text="8"
-            android:textColor="@color/primary_yellow"
+            android:textColor="#FFCB43"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/tv_stayed_on_track"
@@ -83,6 +83,7 @@
             android:layout_height="240dp"
             android:layout_marginTop="32dp"
             android:contentDescription="@string/cat_bubble_tea_image"
+            android:src="@drawable/congratulation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_stayed_on_track" />
@@ -107,7 +108,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_progress"
             android:layout_width="0dp"
-            android:layout_height="70dp"
+            android:layout_height="80dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
@@ -150,7 +151,7 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="16dp"
                 android:contentDescription="@string/bubble_tea_cup"
-                android:src="@android:drawable/ic_menu_recent_history"
+                android:src="@drawable/logo2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/view_divider"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -205,7 +206,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/white"
+        android:background="#FFF2D0"
         android:elevation="8dp"
         android:orientation="horizontal"
         android:paddingBottom="0dp"
@@ -221,7 +222,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/home"
             android:padding="16dp"
-            android:src="@android:drawable/ic_menu_myplaces" />
+            android:src="@drawable/ic_nav_home_normal" />
 
         <!-- 日历按钮 -->
         <ImageView
@@ -231,7 +232,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/calendar"
             android:padding="16dp"
-            android:src="@android:drawable/ic_menu_my_calendar" />
+            android:src="@drawable/ic_nav_calendar_normal" />
 
         <!-- 添加记录按钮 -->
         <FrameLayout
@@ -258,7 +259,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/statistics"
             android:padding="16dp"
-            android:src="@android:drawable/ic_menu_sort_by_size" />
+            android:src="@drawable/ic_nav_stats_normal" />
 
         <!-- 个人按钮 -->
         <ImageView
@@ -268,7 +269,7 @@
             android:layout_weight="1"
             android:contentDescription="@string/profile"
             android:padding="16dp"
-            android:src="@android:drawable/ic_menu_myplaces" />
+            android:src="@drawable/ic_nav_profile_normal" />
 
     </LinearLayout>
 

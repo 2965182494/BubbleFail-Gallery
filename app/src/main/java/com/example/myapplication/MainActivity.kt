@@ -5,6 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.RelativeSizeSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
@@ -204,7 +207,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateCatImage() {
         // 根据当前装扮ID设置不同的图片
         val imageResId = when (currentCostumeId) {
-            0 -> R.drawable.test
+            0 -> R.drawable.congratulation
             1 -> R.drawable.cat_costume_1
             2 -> R.drawable.cat_costume_2
             3 -> R.drawable.cat_costume_3
@@ -331,6 +334,9 @@ class MainActivity : AppCompatActivity() {
         
         // 更新猫咪图片
         updateCatImage()
+        
+        // 初始化导航图标状态
+        updateNavUI(currentNavItem)
     }
     
     // 更新UI显示
@@ -342,10 +348,34 @@ class MainActivity : AppCompatActivity() {
         progressPercentageTextView.text = "$progressPercentage%"
         
         // 更新杯数限制
-        cupLimitTextView.text = "$cupLimit-cup limit"
+        val limitText = "$cupLimit-cup limit"
+        val limitSpannable = SpannableString(limitText)
+        limitSpannable.setSpan(RelativeSizeSpan(1.3f), 0, cupLimit.toString().length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        cupLimitTextView.text = limitSpannable
         
         // 更新杯数状态
-        cupStatusTextView.text = "Drank: $cupsDrank\nRemaining: $cupsRemaining"
+        val drankText = "Drank: $cupsDrank"
+        val remainingText = "Remaining: $cupsRemaining"
+        val statusText = "$drankText\n$remainingText"
+        val statusSpannable = SpannableString(statusText)
+        
+        // 为"Drank:"后面的数字设置更大的尺寸
+        statusSpannable.setSpan(
+            RelativeSizeSpan(1.3f),
+            drankText.indexOf(cupsDrank.toString()),
+            drankText.indexOf(cupsDrank.toString()) + cupsDrank.toString().length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        
+        // 为"Remaining:"后面的数字设置更大的尺寸
+        statusSpannable.setSpan(
+            RelativeSizeSpan(1.3f),
+            statusText.indexOf(cupsRemaining.toString(), drankText.length),
+            statusText.indexOf(cupsRemaining.toString(), drankText.length) + cupsRemaining.toString().length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        
+        cupStatusTextView.text = statusSpannable
     }
     
     // 检查月度目标是否达成
@@ -514,18 +544,18 @@ class MainActivity : AppCompatActivity() {
     
     // 更新导航UI
     private fun updateNavUI(navItem: Int) {
-        // 重置所有按钮状态
-        homeButton.setColorFilter(getColor(R.color.text_dark))
-        calendarButton.setColorFilter(getColor(R.color.text_dark))
-        statisticsButton.setColorFilter(getColor(R.color.text_dark))
-        profileButton.setColorFilter(getColor(R.color.text_dark))
+        // 重置所有按钮状态为未选中图标
+        homeButton.setImageResource(R.drawable.b1)
+        calendarButton.setImageResource(R.drawable.b2)
+        statisticsButton.setImageResource(R.drawable.b3)
+        profileButton.setImageResource(R.drawable.b4)
         
-        // 设置选中按钮状态
+        // 设置选中按钮状态为选中图标
         when (navItem) {
-            NAV_HOME -> homeButton.setColorFilter(getColor(R.color.primary_yellow))
-            NAV_CALENDAR -> calendarButton.setColorFilter(getColor(R.color.primary_yellow))
-            NAV_STATISTICS -> statisticsButton.setColorFilter(getColor(R.color.primary_yellow))
-            NAV_PROFILE -> profileButton.setColorFilter(getColor(R.color.primary_yellow))
+            NAV_HOME -> homeButton.setImageResource(R.drawable.y1)
+            NAV_CALENDAR -> calendarButton.setImageResource(R.drawable.y2)
+            NAV_STATISTICS -> statisticsButton.setImageResource(R.drawable.y3)
+            NAV_PROFILE -> profileButton.setImageResource(R.drawable.y4)
         }
     }
     

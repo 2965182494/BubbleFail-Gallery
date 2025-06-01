@@ -50,7 +50,7 @@
     
     <!-- 日历界面 -->
     <string name="havent_drunk_for">Haven\'t drunk for</string>
-    <string name="days_this_month">consecutive days this month</string>
+    <string name="days_this_month">consecutive days</string>
     <string name="no_records_yet">No records yet</string>
     <string name="need_records_first">You need to track your bubble tea consumption first!</string>
     <string name="cat_calendar_image">Cat Calendar Image</string>

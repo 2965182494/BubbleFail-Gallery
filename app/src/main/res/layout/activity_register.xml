@@ -180,7 +180,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="@string/sign_in"
-        android:textColor="@color/primary_yellow"
+        android:textColor="#FF7029"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_have_account"

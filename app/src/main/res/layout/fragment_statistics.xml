@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_cream"
+    android:background="@color/white"
     tools:context=".fragment.StatisticsFragment">
 
     <LinearLayout
@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/primary_yellow_light"
+                app:cardBackgroundColor="#FFF2D0"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
 
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/primary_yellow_light"
+                app:cardBackgroundColor="#FFF2D0"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
 
@@ -124,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/primary_yellow_light"
+                app:cardBackgroundColor="#FFF2D0"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
 
@@ -158,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/primary_yellow_light"
+                app:cardBackgroundColor="#FFF2D0"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
 

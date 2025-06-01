@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_cream"
+    android:background="#FAF1E7"
     tools:context=".activity.CostumeActivity">
 
     <!-- 顶部标题 -->
@@ -28,7 +28,7 @@
         android:layout_height="240dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/costume_image"
-        android:src="@drawable/test"
+        android:src="@drawable/congratulation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_costume_title" />

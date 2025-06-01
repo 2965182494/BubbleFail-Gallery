@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_cream"
+    android:background="#FAF1E7"
     tools:context=".fragment.CalendarFragment">
 
     <!-- Top text area -->
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="3"
-        android:textColor="@color/primary_yellow"
+        android:textColor="#FFCB43"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_sober_days_text"
@@ -75,7 +75,7 @@
         android:layout_height="160dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/cat_calendar_image"
-        android:src="@drawable/test"
+        android:src="@drawable/cat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +97,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:contentDescription="@string/previous_month"
-            android:src="@android:drawable/ic_media_previous"
+            android:src="@drawable/left"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -123,7 +123,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:contentDescription="@string/next_month"
-            android:src="@android:drawable/ic_media_next"
+            android:src="@drawable/right"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

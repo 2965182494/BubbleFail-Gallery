@@ -12,7 +12,7 @@
         android:id="@+id/tv_sober_days_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="80dp"
         android:text="@string/havent_drunk_for"
         android:textColor="@color/text_dark"
         android:textSize="18sp"
@@ -51,7 +51,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/tv_sober_days_count" />
+        app:layout_constraintStart_toEndOf="@+id/tv_sober_days_count"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tv_sober_days_suffix"

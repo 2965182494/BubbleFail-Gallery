@@ -22,24 +22,33 @@ class CostumeActivity : AppCompatActivity() {
     private lateinit var nextButton: ImageButton
     private lateinit var selectButton: Button
     
-    // 当前选择的装扮ID（0-4，共5种）
+    // 当前选择的装扮ID（0-7，共8种）
     private var currentCostumeId = 0
     
     // 最大装扮数量
-    private val maxCostumeCount = 5
+    private val maxCostumeCount = 8
+    
+    // 用户ID
+    private var userId = 1
     
     // 装扮资源ID数组
     private val costumeResources = arrayOf(
-        R.drawable.test,
+        R.drawable.cat_costume_default,
         R.drawable.cat_costume_1,
         R.drawable.cat_costume_2,
         R.drawable.cat_costume_3,
-        R.drawable.cat_costume_4
+        R.drawable.cat_costume_4,
+        R.drawable.cat_costume_5,
+        R.drawable.cat_costume_6,
+        R.drawable.cat_costume_7
     )
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_costume)
+        
+        // 获取用户ID
+        userId = intent.getIntExtra("USER_ID", 1)
         
         // 初始化视图
         initViews()
@@ -65,8 +74,8 @@ class CostumeActivity : AppCompatActivity() {
     }
     
     private fun loadCurrentCostume() {
-        // 从MainActivity获取当前装扮ID
-        val sharedPreferences = getSharedPreferences(MainActivity.PREF_NAME, MODE_PRIVATE)
+        // 从MainActivity获取当前装扮ID，使用用户特定的SharedPreferences
+        val sharedPreferences = getSharedPreferences("${MainActivity.PREF_NAME}_$userId", MODE_PRIVATE)
         currentCostumeId = sharedPreferences.getInt(MainActivity.KEY_CURRENT_COSTUME, 0)
     }
     
@@ -118,18 +127,13 @@ class CostumeActivity : AppCompatActivity() {
     }
     
     private fun saveCurrentCostume() {
-        // 保存当前装扮ID到SharedPreferences
-        val sharedPreferences = getSharedPreferences(MainActivity.PREF_NAME, MODE_PRIVATE)
+        // 保存当前装扮ID到用户特定的SharedPreferences
+        val sharedPreferences = getSharedPreferences("${MainActivity.PREF_NAME}_$userId", MODE_PRIVATE)
         sharedPreferences.edit().putInt(MainActivity.KEY_CURRENT_COSTUME, currentCostumeId).apply()
         
         // 设置结果并返回
         val resultIntent = Intent()
         resultIntent.putExtra(MainActivity.KEY_CURRENT_COSTUME, currentCostumeId)
         setResult(RESULT_OK, resultIntent)
-    }
-    
-    companion object {
-        const val PREF_NAME = "bubble_tea_prefs"
-        const val KEY_CURRENT_COSTUME = "current_costume"
     }
 } 

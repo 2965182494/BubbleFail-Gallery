@@ -45,6 +45,11 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // 从arguments中获取用户ID
+        arguments?.let {
+            currentUserId = it.getInt("USER_ID", 1)
+        }
+        
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
     

@@ -73,6 +73,9 @@ class AddRecordActivity : AppCompatActivity() {
         private const val MAX_IMAGE_WIDTH = 800
         private const val MAX_IMAGE_HEIGHT = 800
         private const val IMAGE_QUALITY = 80
+        
+        // Intent参数
+        const val EXTRA_USER_ID = "USER_ID"
     }
     
     // 图库选择结果处理
@@ -109,6 +112,9 @@ class AddRecordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_record)
+        
+        // 获取用户ID
+        currentUserId = intent.getIntExtra(EXTRA_USER_ID, 1)
         
         // 设置返回按钮
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

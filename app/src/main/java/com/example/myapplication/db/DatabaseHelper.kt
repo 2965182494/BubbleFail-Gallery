@@ -92,4 +92,30 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         
         return exists
     }
+    
+    // 根据邮箱获取用户ID
+    fun getUserIdByEmail(email: String): Int {
+        val db = this.readableDatabase
+        val selection = "$COLUMN_EMAIL = ?"
+        val selectionArgs = arrayOf(email)
+        
+        val cursor = db.query(
+            TABLE_USERS,
+            arrayOf(COLUMN_ID),
+            selection,
+            selectionArgs,
+            null,
+            null,
+            null
+        )
+        
+        var userId = -1
+        if (cursor.moveToFirst()) {
+            userId = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+        }
+        cursor.close()
+        db.close()
+        
+        return userId
+    }
 } 

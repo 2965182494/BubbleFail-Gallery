@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -21,7 +22,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.Fragment
 import com.example.myapplication.activity.AddRecordActivity
 import com.example.myapplication.activity.CostumeActivity
 import com.example.myapplication.database.DatabaseHelper
@@ -32,11 +32,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import com.example.myapplication.db.DatabaseHelper as UserDatabaseHelper
 
 class MainActivity : AppCompatActivity() {
     
     // 视图组件
     private lateinit var daysCountTextView: TextView
+    private lateinit var congratulations: TextView
     private lateinit var progressPercentageTextView: TextView
     private lateinit var cupLimitTextView: TextView
     private lateinit var cupStatusTextView: TextView
@@ -92,12 +94,22 @@ class MainActivity : AppCompatActivity() {
         private const val KEY_LAST_CHECKED_YEAR = "last_checked_year"
         const val KEY_CURRENT_COSTUME = "current_costume"
         const val EXTRA_SHOW_REWARD = "SHOW_REWARD"
+        const val EXTRA_USER_EMAIL = "EMAIL"
     }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        
+        // 获取用户邮箱
+        val userEmail = intent.getStringExtra(EXTRA_USER_EMAIL) ?: ""
+        
+        // 初始化数据库帮助类
+        dbHelper = DatabaseHelper(this)
+        
+        // 获取用户ID
+        currentUserId = getUserIdFromEmail(userEmail)
         
         // 初始化装扮选择结果处理器
         costumeActivityResultLauncher = registerForActivityResult(
@@ -122,11 +134,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         
-        // 初始化数据库帮助类
-        dbHelper = DatabaseHelper(this)
-        
-        // 初始化SharedPreferences
-        sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        // 初始化SharedPreferences - 使用用户特定的配置文件
+        sharedPreferences = getSharedPreferences("${PREF_NAME}_$currentUserId", Context.MODE_PRIVATE)
         
         // 从SharedPreferences加载杯数限制
         loadCupLimit()
@@ -207,11 +216,14 @@ class MainActivity : AppCompatActivity() {
     private fun updateCatImage() {
         // 根据当前装扮ID设置不同的图片
         val imageResId = when (currentCostumeId) {
-            0 -> R.drawable.congratulation
+            0 -> R.drawable.cat_costume_default
             1 -> R.drawable.cat_costume_1
             2 -> R.drawable.cat_costume_2
             3 -> R.drawable.cat_costume_3
             4 -> R.drawable.cat_costume_4
+            5 -> R.drawable.cat_costume_5
+            6 -> R.drawable.cat_costume_6
+            7 -> R.drawable.cat_costume_7
             else -> R.drawable.cat_costume_default
         }
         catBubbleTeaImageView.setImageResource(imageResId)
@@ -324,11 +336,14 @@ class MainActivity : AppCompatActivity() {
         fragmentContainer = findViewById(R.id.fragment_container)
         catBubbleTeaImageView = findViewById(R.id.iv_cat_bubble_tea)
         rewardIndicator = findViewById(R.id.tv_main_reward_indicator)
-        
+//        congratulations = findViewById(R.id.tv_congratulations)
+//        val typeFace1: Typeface = Typeface.createFromAsset(assets, "fonts/iconfont.ttf")
+//        congratulations.setTypeface(typeFace1);
         // 设置奖励指示器点击事件
         rewardIndicator.setOnClickListener {
             // 跳转到换装页面
             val intent = Intent(this, CostumeActivity::class.java)
+            intent.putExtra("USER_ID", currentUserId)
             costumeActivityResultLauncher.launch(intent)
         }
         
@@ -449,6 +464,7 @@ class MainActivity : AppCompatActivity() {
         addRecordButton.setOnClickListener {
             // 跳转到添加记录界面
             val intent = Intent(this, AddRecordActivity::class.java)
+            intent.putExtra(AddRecordActivity.EXTRA_USER_ID, currentUserId)
             startActivity(intent)
         }
         
@@ -525,11 +541,29 @@ class MainActivity : AppCompatActivity() {
             mainContent.visibility = View.GONE
             fragmentContainer.visibility = View.VISIBLE
             
-            // 创建并显示对应的Fragment
+            // 创建并显示对应的Fragment，并传递用户ID
             val fragment = when (navItem) {
-                NAV_CALENDAR -> CalendarFragment()
-                NAV_STATISTICS -> StatisticsFragment()
-                NAV_PROFILE -> ProfileFragment()
+                NAV_CALENDAR -> {
+                    val fragment = CalendarFragment()
+                    val args = Bundle()
+                    args.putInt("USER_ID", currentUserId)
+                    fragment.arguments = args
+                    fragment
+                }
+                NAV_STATISTICS -> {
+                    val fragment = StatisticsFragment()
+                    val args = Bundle()
+                    args.putInt("USER_ID", currentUserId)
+                    fragment.arguments = args
+                    fragment
+                }
+                NAV_PROFILE -> {
+                    val fragment = ProfileFragment()
+                    val args = Bundle()
+                    args.putInt("USER_ID", currentUserId)
+                    fragment.arguments = args
+                    fragment
+                }
                 else -> null
             }
             
@@ -570,5 +604,18 @@ class MainActivity : AppCompatActivity() {
         } else {
             0
         }
+    }
+    
+    // 根据邮箱获取用户ID
+    private fun getUserIdFromEmail(email: String): Int {
+        if (email.isEmpty()) {
+            return 1 // 默认用户ID
+        }
+        
+        // 使用db包中的DatabaseHelper获取用户ID
+        val dbUserHelper = UserDatabaseHelper(this)
+        val userId = dbUserHelper.getUserIdByEmail(email)
+        
+        return if (userId > 0) userId else 1 // 如果找不到用户，返回默认ID
     }
 }

@@ -73,6 +73,12 @@ class CalendarFragment : Fragment() {
         
         Log.d("CalendarFragment", "onCreateView called")
         
+        // 从arguments中获取用户ID
+        arguments?.let {
+            currentUserId = it.getInt("USER_ID", 1)
+            Log.d("CalendarFragment", "获取到用户ID: $currentUserId")
+        }
+        
         return view
     }
     

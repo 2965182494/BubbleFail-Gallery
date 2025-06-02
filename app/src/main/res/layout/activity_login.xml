@@ -14,10 +14,10 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="80dp"
         android:text="@string/sign_in_now"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/please_sign_in"
         android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,10 +43,10 @@
         android:id="@+id/tv_email_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:text="@string/email"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
 
@@ -71,10 +71,10 @@
         android:id="@+id/tv_password_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:text="@string/password"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
@@ -110,7 +110,7 @@
         android:id="@+id/btn_sign_in"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:background="@null"
         android:backgroundTint="@color/primary_yellow"
         android:text="@string/sign_in"
@@ -125,7 +125,7 @@
         android:id="@+id/tv_no_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/dont_have_account"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
@@ -155,7 +155,7 @@
         android:id="@+id/tv_or_connect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:text="@string/or_connect"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
@@ -165,9 +165,10 @@
 
     <!-- 社交媒体登录按钮容器 -->
     <LinearLayout
+        android:id="@+id/social_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -176,9 +177,9 @@
         <!-- 社交媒体按钮1 -->
         <ImageView
             android:id="@+id/iv_social_1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="24dp"
             android:contentDescription="@string/social_login"
             android:src="@drawable/qq"
             android:background="@drawable/bg_social_button" />
@@ -186,9 +187,9 @@
         <!-- 社交媒体按钮2 -->
         <ImageView
             android:id="@+id/iv_social_2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="24dp"
             android:contentDescription="@string/social_login"
             android:src="@drawable/weixin"
             android:background="@drawable/bg_social_button" />
@@ -196,8 +197,8 @@
         <!-- 社交媒体按钮3 -->
         <ImageView
             android:id="@+id/iv_social_3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:contentDescription="@string/social_login"
             android:src="@drawable/phone"
             android:background="@drawable/bg_social_button" />

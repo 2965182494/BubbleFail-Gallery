@@ -122,5 +122,5 @@
     <string name="no">No</string>
     <string name="previous_costume">上一个装扮</string>
     <string name="next_costume">下一个装扮</string>
-    <string name="select_costume">选择当前装扮</string>
+    <string name="select_costume">Select the current outfit</string>
 </resources>

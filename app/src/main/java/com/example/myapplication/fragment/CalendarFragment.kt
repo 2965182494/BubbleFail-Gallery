@@ -21,6 +21,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.activity.AddRecordActivity
+import com.example.myapplication.activity.EditRecordActivity
 import com.example.myapplication.adapter.CalendarAdapter
 import com.example.myapplication.database.DatabaseHelper
 import com.example.myapplication.model.BubbleTeaRecord
@@ -42,6 +44,7 @@ class CalendarFragment : Fragment() {
     private lateinit var soberDaysText: TextView
     private lateinit var soberDaysCount: TextView
     private lateinit var rewardNotification: TextView
+    private lateinit var noRecordsText: TextView
     
     // Calendar data
     private val calendar = Calendar.getInstance()
@@ -125,6 +128,7 @@ class CalendarFragment : Fragment() {
         soberDaysText = view.findViewById(R.id.tv_sober_days_text)
         soberDaysCount = view.findViewById(R.id.tv_sober_days_count)
         rewardNotification = view.findViewById(R.id.tv_reward_notification)
+        noRecordsText = view.findViewById(R.id.tv_no_records)
         
         // Setup month dropdown
         val monthAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, months)
@@ -142,10 +146,32 @@ class CalendarFragment : Fragment() {
         daysRecyclerView.layoutManager = GridLayoutManager(context, 7) // 7 columns for Mon-Sun
         daysRecyclerView.adapter = calendarAdapter
         
+        // 设置日历点击事件
+        calendarAdapter.setOnDayClickListener(object : CalendarAdapter.OnDayClickListener {
+            override fun onDayClick(day: CalendarDay) {
+                if (day.hasRecord) {
+                    // 获取该日期的记录
+                    val records = dbHelper.getBubbleTeaRecordsByDate(day.date, currentUserId)
+                    if (records.isNotEmpty()) {
+                        // 打开编辑记录页面
+                        openEditRecordActivity(records[0])
+                    }
+                }
+            }
+        })
+        
         // Setup reward notification click listener
         rewardNotification.setOnClickListener {
             showRewardDialog()
         }
+    }
+    
+    // 打开编辑记录页面
+    private fun openEditRecordActivity(record: BubbleTeaRecord) {
+        val intent = Intent(requireContext(), EditRecordActivity::class.java)
+        intent.putExtra(EditRecordActivity.EXTRA_RECORD_ID, record.id)
+        intent.putExtra(EditRecordActivity.EXTRA_USER_ID, currentUserId)
+        startActivity(intent)
     }
     
     // Setup listeners
@@ -306,15 +332,18 @@ class CalendarFragment : Fragment() {
         val daysSuffix = view?.findViewById<TextView>(R.id.tv_sober_days_suffix)
         
         if (allRecords.isEmpty()) {
-            // 如果没有记录，显示特殊提示
-            soberDaysCount.text = ""
-            soberDaysText.text = getString(R.string.no_records_yet)
+            // 如果没有记录，显示"No records yet"文本，隐藏其他文本
+            noRecordsText.visibility = View.VISIBLE
+            soberDaysText.visibility = View.INVISIBLE
+            soberDaysCount.visibility = View.INVISIBLE
             daysSuffix?.visibility = View.INVISIBLE
             rewardNotification.visibility = View.INVISIBLE
         } else {
-            // 有记录，正常显示
+            // 有记录，显示正常文本，隐藏"No records yet"
+            noRecordsText.visibility = View.GONE
+            soberDaysText.visibility = View.VISIBLE
+            soberDaysCount.visibility = View.VISIBLE
             soberDaysCount.text = soberDays.toString()
-            soberDaysText.text = getString(R.string.havent_drunk_for)
             daysSuffix?.visibility = View.VISIBLE
             
             // 检查是否显示奖励通知

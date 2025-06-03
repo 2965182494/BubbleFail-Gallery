@@ -17,9 +17,9 @@ class CostumeActivity : AppCompatActivity() {
     private lateinit var costumeImageView: ImageView
     private lateinit var randomCostumeButton: Button
     private lateinit var backButton: ImageButton
-    private lateinit var costumeIndicator: TextView
-    private lateinit var prevButton: ImageButton
-    private lateinit var nextButton: ImageButton
+//    private lateinit var costumeIndicator: TextView
+    private lateinit var prevButton: ImageView
+    private lateinit var nextButton: ImageView
     private lateinit var selectButton: Button
     
     // 当前选择的装扮ID（0-7，共8种）
@@ -67,7 +67,7 @@ class CostumeActivity : AppCompatActivity() {
         costumeImageView = findViewById(R.id.iv_costume)
         randomCostumeButton = findViewById(R.id.btn_random_costume)
         backButton = findViewById(R.id.btn_back)
-        costumeIndicator = findViewById(R.id.tv_costume_indicator)
+//        costumeIndicator = findViewById(R.id.tv_costume_indicator)
         prevButton = findViewById(R.id.btn_prev_costume)
         nextButton = findViewById(R.id.btn_next_costume)
         selectButton = findViewById(R.id.btn_select_costume)
@@ -81,7 +81,7 @@ class CostumeActivity : AppCompatActivity() {
     
     private fun updateCostumeUI() {
         // 更新装扮指示器
-        costumeIndicator.text = getString(R.string.costume_indicator, currentCostumeId + 1, maxCostumeCount)
+//        costumeIndicator.text = getString(R.string.costume_indicator, currentCostumeId + 1, maxCostumeCount)
         
         // 根据当前装扮ID设置图片
         costumeImageView.setImageResource(costumeResources[currentCostumeId])

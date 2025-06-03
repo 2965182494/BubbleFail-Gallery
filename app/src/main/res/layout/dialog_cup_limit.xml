@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="选择本月奶茶限制杯数"
+        android:text="Choose the number of bubble tea cups limited this month."
         android:textSize="16sp"
         android:textColor="@color/text_dark"
         android:gravity="center"
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="设置合理的奶茶限制有助于控制糖分摄入"
+        android:text="Setting reasonable limits on milk tea helps to control sugar intake."
         android:textSize="14sp"
         android:textColor="@color/text_dark"
         android:alpha="0.7"

@@ -162,6 +162,33 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     /**
+     * 通过ID获取奶茶记录
+     */
+    fun getBubbleTeaRecordById(recordId: Int): List<BubbleTeaRecord> {
+        val records = mutableListOf<BubbleTeaRecord>()
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_RECORDS WHERE $COLUMN_RECORD_ID = ?"
+        
+        val cursor = db.rawQuery(query, arrayOf(recordId.toString()))
+        if (cursor.moveToFirst()) {
+            do {
+                val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_RECORD_ID))
+                val date = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_RECORD_DATE))
+                val name = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_RECORD_NAME))
+                val expense = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_RECORD_EXPENSE))
+                val sweetness = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_RECORD_SWEETNESS))
+                val imagePath = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_RECORD_IMAGE_PATH))
+                
+                val record = BubbleTeaRecord(id, date, name, expense, sweetness, imagePath)
+                records.add(record)
+            } while (cursor.moveToNext())
+        }
+        cursor.close()
+        db.close()
+        return records
+    }
+
+    /**
      * 获取所有有记录的日期
      */
     fun getAllRecordDates(userId: Int): List<String> {

@@ -18,6 +18,19 @@ import java.io.File
 class CalendarAdapter(private var days: MutableList<CalendarDay>) : 
     RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
     
+    // 添加点击事件监听接口
+    interface OnDayClickListener {
+        fun onDayClick(day: CalendarDay)
+    }
+    
+    // 点击事件监听器
+    private var onDayClickListener: OnDayClickListener? = null
+    
+    // 设置点击事件监听器
+    fun setOnDayClickListener(listener: OnDayClickListener) {
+        this.onDayClickListener = listener
+    }
+    
     fun updateData(newDays: List<CalendarDay>) {
         Log.d("CalendarAdapter", "Updating data with ${newDays.size} days")
         days.clear()
@@ -58,8 +71,16 @@ class CalendarAdapter(private var days: MutableList<CalendarDay>) :
                 return
             }
             
-            // Normal date item - set as not clickable
-            itemView.isClickable = false
+            // 设置点击事件
+            if (day.hasRecord) {
+                itemView.isClickable = true
+                itemView.setOnClickListener {
+                    onDayClickListener?.onDayClick(day)
+                }
+            } else {
+                itemView.isClickable = false
+                itemView.setOnClickListener(null)
+            }
             
             // Check if there's a record
             if (day.hasRecord && day.iconPath.isNotEmpty()) {

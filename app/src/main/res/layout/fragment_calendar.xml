@@ -7,69 +7,93 @@
     android:background="#FAF1E7"
     tools:context=".fragment.CalendarFragment">
 
-    <!-- Top text area -->
-    <TextView
-        android:id="@+id/tv_sober_days_text"
-        android:layout_width="wrap_content"
+    <!-- 文本容器 - 保持固定高度 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/text_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="@string/havent_drunk_for"
-        android:textColor="@color/text_dark"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/tv_sober_days_count"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Days count number -->
-    <TextView
-        android:id="@+id/tv_sober_days_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="3"
-        android:textColor="#FFCB43"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_sober_days_text"
-        app:layout_constraintEnd_toStartOf="@+id/tv_sober_days_suffix"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_sober_days_text" />
-
-    <!-- 感叹号标记 -->
-
-    <!-- Days suffix -->
-    <TextView
-        android:id="@+id/tv_reward_notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="!"
-        android:textColor="#FF5252"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/tv_sober_days_count"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/tv_sober_days_suffix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="@string/days_this_month"
-        android:textColor="@color/text_dark"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_sober_days_count"
+        android:minHeight="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_sober_days_count" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Top text area -->
+        <TextView
+            android:id="@+id/tv_sober_days_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/havent_drunk_for"
+            android:textColor="@color/text_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_sober_days_count"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- No Records Text - 居中显示 -->
+        <TextView
+            android:id="@+id/tv_no_records"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_records_yet"
+            android:textColor="@color/text_dark"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Days count number -->
+        <TextView
+            android:id="@+id/tv_sober_days_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="3"
+            android:textColor="#FFCB43"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_sober_days_text"
+            app:layout_constraintEnd_toStartOf="@+id/tv_sober_days_suffix"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_sober_days_text" />
+
+        <!-- 感叹号标记 -->
+        <TextView
+            android:id="@+id/tv_reward_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="!"
+            android:textColor="#FF5252"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@+id/tv_sober_days_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_sober_days_count"
+            tools:ignore="MissingConstraints" />
+
+        <!-- Days suffix -->
+        <TextView
+            android:id="@+id/tv_sober_days_suffix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/days_this_month"
+            android:textColor="@color/text_dark"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_sober_days_count"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_sober_days_count" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Image placeholder area -->
-
-    <!-- Calendar navigation bar -->
     <ImageView
         android:id="@+id/iv_cat_calendar"
         android:layout_width="240dp"
@@ -80,8 +104,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sober_days_text" />
+        app:layout_constraintTop_toBottomOf="@+id/text_container" />
 
+    <!-- Calendar navigation bar -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/calendar_nav"
         android:layout_width="match_parent"

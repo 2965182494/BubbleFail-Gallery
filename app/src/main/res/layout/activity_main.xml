@@ -120,20 +120,24 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_cat_bubble_tea">
 
             <!-- 进度百分比 -->
+
+            <!-- 分隔线 -->
+
             <TextView
                 android:id="@+id/tv_progress_percentage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
                 android:text="60%"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="32sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/view_divider"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.476" />
 
-            <!-- 分隔线 -->
+            <!-- 奶茶杯图标 -->
             <View
                 android:id="@+id/view_divider"
                 android:layout_width="1dp"
@@ -141,49 +145,52 @@
                 android:background="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.37"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- 奶茶杯图标 -->
+            <!-- 杯数限制 -->
+
+            <!-- 杯数状态 -->
+
             <ImageView
                 android:id="@+id/iv_cup"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="20dp"
                 android:contentDescription="@string/bubble_tea_cup"
                 android:src="@drawable/logo2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/view_divider"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- 杯数限制 -->
-    <TextView
+            <TextView
                 android:id="@+id/tv_cup_limit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
                 android:text="@string/cup_limit"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_cup_status"
                 app:layout_constraintStart_toEndOf="@+id/iv_cup"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <!-- 杯数状态 -->
             <TextView
                 android:id="@+id/tv_cup_status"
-                android:layout_width="0dp"
+                android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:text="@string/cup_status"
                 android:textColor="@color/white"
-                android:textSize="14sp"
-                android:maxLines="2"
-                android:ellipsize="end"
-        app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_cup"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.37"
+                app:layout_constraintStart_toEndOf="@+id/iv_cup"
                 app:layout_constraintTop_toBottomOf="@+id/tv_cup_limit" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

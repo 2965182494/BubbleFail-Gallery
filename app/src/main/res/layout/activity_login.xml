@@ -14,14 +14,15 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/lexend_extrabold"
+        android:gravity="center"
         android:text="@string/sign_in_now"
         android:textColor="@color/black"
-        android:textSize="26sp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- 副标题 -->
@@ -29,13 +30,14 @@
         android:id="@+id/tv_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/please_sign_in"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lexend_bold"
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/please_sign_in"
+        android:textColor="@color/text_dark_50"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <!-- 邮箱输入框标签 -->
@@ -44,36 +46,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/email"
-        android:textColor="@color/black"
+        android:textColor="@color/text_dark_50"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_subtitle" />
 
     <!-- 邮箱输入框 -->
+
+    <!-- 密码输入框标签 -->
     <EditText
         android:id="@+id/et_email"
         android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/bg_edit_text"
         android:hint=""
         android:inputType="textEmailAddress"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColor="@color/black"
+        android:textColor="@color/text_dark"
         app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_email_label" />
 
-    <!-- 密码输入框标签 -->
     <TextView
         android:id="@+id/tv_password_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/password"
-        android:textColor="@color/black"
+        android:textColor="@color/text_dark_50"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
@@ -82,14 +88,14 @@
     <EditText
         android:id="@+id/et_password"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/bg_edit_text"
         android:hint=""
         android:inputType="textPassword"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textColor="@color/black"
+        android:textColor="@color/text_dark"
         app:layout_constraintEnd_toEndOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/tv_password_label" />
@@ -108,14 +114,17 @@
     <!-- 登录按钮 -->
     <Button
         android:id="@+id/btn_sign_in"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="310dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
         android:background="@null"
         android:backgroundTint="@color/primary_yellow"
+        android:fontFamily="@font/lexend"
         android:text="@string/sign_in"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="@+id/guideline_right"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/et_password" />
@@ -126,9 +135,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/dont_have_account"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
+        android:textColor="@color/text_dark_50"
+        android:textSize="15sp"
         app:layout_constraintEnd_toStartOf="@+id/tv_sign_up"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,9 +150,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/sign_up"
         android:textColor="#FF7029"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_no_account"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,10 +166,11 @@
         android:id="@+id/tv_or_connect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/or_connect"
         android:textColor="@android:color/darker_gray"
-        android:textSize="14sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_no_account" />
@@ -168,7 +180,7 @@
         android:id="@+id/social_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -180,9 +192,9 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_social_button"
             android:contentDescription="@string/social_login"
-            android:src="@drawable/qq"
-            android:background="@drawable/bg_social_button" />
+            android:src="@drawable/qq" />
 
         <!-- 社交媒体按钮2 -->
         <ImageView
@@ -190,18 +202,18 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginEnd="24dp"
+            android:background="@drawable/bg_social_button"
             android:contentDescription="@string/social_login"
-            android:src="@drawable/weixin"
-            android:background="@drawable/bg_social_button" />
+            android:src="@drawable/weixin" />
 
         <!-- 社交媒体按钮3 -->
         <ImageView
             android:id="@+id/iv_social_3"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:background="@drawable/bg_social_button"
             android:contentDescription="@string/social_login"
-            android:src="@drawable/phone"
-            android:background="@drawable/bg_social_button" />
+            android:src="@drawable/phone" />
     </LinearLayout>
 
     <!-- 左侧参考线 -->

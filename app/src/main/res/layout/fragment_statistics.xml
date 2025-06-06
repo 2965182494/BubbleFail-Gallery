@@ -19,19 +19,21 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="4dp"
+            android:fontFamily="@font/lexend_bold"
             android:text="@string/statistics"
             android:textColor="@color/text_dark"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <!-- 概览部分 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="12dp"
+            android:fontFamily="@font/lexend_extrabold"
             android:text="@string/overview"
             android:textColor="@color/text_dark"
             android:textSize="18sp"
@@ -66,14 +68,17 @@
                         android:id="@+id/tv_total_cups"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="0dp"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="5.0"
                         android:textColor="@color/text_dark"
-                        android:textSize="24sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="@string/total_cups"
                         android:textColor="@color/text_dark"
                         android:textSize="12sp" />
@@ -100,14 +105,16 @@
                         android:id="@+id/tv_avg_interval"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="3.4"
                         android:textColor="@color/text_dark"
-                        android:textSize="24sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="@string/avg_interval_days"
                         android:textColor="@color/text_dark"
                         android:textSize="12sp" />
@@ -142,14 +149,16 @@
                         android:id="@+id/tv_total_expense"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="28.70"
                         android:textColor="@color/text_dark"
-                        android:textSize="24sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="@string/total_expense"
                         android:textColor="@color/text_dark"
                         android:textSize="12sp" />
@@ -176,14 +185,16 @@
                         android:id="@+id/tv_avg_daily_amount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="1.8"
                         android:textColor="@color/text_dark"
-                        android:textSize="24sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="@string/avg_daily_amount"
                         android:textColor="@color/text_dark"
                         android:textSize="12sp" />
@@ -204,6 +215,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/lexend_bold"
                 android:text="@string/expense"
                 android:textColor="@color/text_dark"
                 android:textSize="18sp"
@@ -213,8 +225,9 @@
                 android:id="@+id/tv_expense_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_bold"
                 android:text="¥ 28.70"
-                android:textColor="@color/text_dark"
+                android:textColor="@color/text_dark_50"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -241,6 +254,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/lexend_bold"
                 android:text="@string/ranking"
                 android:textColor="@color/text_dark"
                 android:textSize="18sp"
@@ -250,6 +264,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:fontFamily="@font/lexend_bold"
                 android:text="@string/by_frequency"
                 android:textColor="@color/text_dark_50"
                 android:textSize="12sp" />

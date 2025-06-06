@@ -376,7 +376,7 @@ class MainActivity : AppCompatActivity() {
         
         // 为"Drank:"后面的数字设置更大的尺寸
         statusSpannable.setSpan(
-            RelativeSizeSpan(1.3f),
+            RelativeSizeSpan(1.4f),
             drankText.indexOf(cupsDrank.toString()),
             drankText.indexOf(cupsDrank.toString()) + cupsDrank.toString().length,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
@@ -384,7 +384,7 @@ class MainActivity : AppCompatActivity() {
         
         // 为"Remaining:"后面的数字设置更大的尺寸
         statusSpannable.setSpan(
-            RelativeSizeSpan(1.3f),
+            RelativeSizeSpan(1.4f),
             statusText.indexOf(cupsRemaining.toString(), drankText.length),
             statusText.indexOf(cupsRemaining.toString(), drankText.length) + cupsRemaining.toString().length,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE

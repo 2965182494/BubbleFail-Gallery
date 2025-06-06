@@ -19,11 +19,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="16dp"
-            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lexend_bold"
             android:text="@string/profile"
             android:textColor="@color/text_dark"
-            android:textSize="24sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <!-- User Info Card -->
@@ -59,6 +60,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:fontFamily="@font/lexend_bold"
                     android:text="@string/default_username"
                     android:textColor="@color/text_dark"
                     android:textSize="20sp"
@@ -76,6 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/lexend"
                     android:text="user@example.com"
                     android:textColor="@color/text_light"
                     android:textSize="14sp"
@@ -90,10 +93,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:fontFamily="@font/lexend"
                     android:text="@string/default_bio"
                     android:textColor="@color/text_dark"
                     android:textSize="14sp"
-                    app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
+                    app:layout_constraintTop_toBottomOf="@+id/iv_avatar"
+                    tools:layout_editor_absoluteX="16dp" />
 
                 <!-- Edit Profile Button -->
                 <Button
@@ -102,6 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:backgroundTint="@color/primary_yellow"
+                    android:fontFamily="@font/lexend_bold"
                     android:text="@string/edit_profile"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -115,6 +121,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
+            android:fontFamily="@font/lexend_bold"
             android:text="@string/settings"
             android:textColor="@color/text_dark"
             android:textSize="18sp"
@@ -152,6 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/lexend_medium"
                     android:text="@string/theme"
                     android:textColor="@color/text_dark"
                     android:textSize="16sp" />
@@ -160,6 +168,7 @@
                     android:id="@+id/tv_theme_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
                     android:text="@string/light"
                     android:textColor="@color/text_light"
                     android:textSize="14sp" />
@@ -206,6 +215,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/lexend_medium"
                     android:text="@string/language"
                     android:textColor="@color/text_dark"
                     android:textSize="16sp" />
@@ -214,6 +224,7 @@
                     android:id="@+id/tv_language_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
                     android:text="@string/english"
                     android:textColor="@color/text_light"
                     android:textSize="14sp" />
@@ -233,6 +244,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
+            android:fontFamily="@font/lexend_bold"
             android:text="@string/account"
             android:textColor="@color/text_dark"
             android:textSize="18sp"
@@ -244,6 +256,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/primary_yellow"
+            android:fontFamily="@font/lexend_bold"
             android:text="@string/logout"
             android:textColor="@color/white" />
 

@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/costume_title"
         android:textColor="@color/text_dark"
         android:textSize="24sp"
@@ -24,9 +25,9 @@
     <!-- 猫咪图片 -->
     <ImageView
         android:id="@+id/iv_costume"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="160dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="80dp"
         android:contentDescription="@string/costume_image"
         android:src="@drawable/cat_costume_default"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,31 +63,39 @@
         app:tint="@color/text_dark" />
 
     <!-- 选择按钮 -->
-    <Button
-        android:id="@+id/btn_select_costume"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/primary_yellow"
-        android:text="@string/select_costume"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_random_costume"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <!-- 换装按钮 -->
     <Button
-        android:id="@+id/btn_random_costume"
+        android:id="@+id/btn_select_costume"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="@color/primary_yellow"
+        android:fontFamily="@font/lexend_bold"
+        android:text="@string/select_costume"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_random_costume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cornerRadius="20dp"/>
+
+    <Button
+        android:id="@+id/btn_random_costume"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/primary_yellow"
+        android:fontFamily="@font/lexend_bold"
         android:text="@string/random_dress"
         android:textColor="@color/white"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

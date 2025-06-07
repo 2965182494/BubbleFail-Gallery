@@ -448,7 +448,8 @@ class MainActivity : AppCompatActivity() {
                 achievementCount = dbHelper.getAchievementCount(currentUserId)
                 
                 // 显示成就提示
-                Toast.makeText(this, "恭喜！你在上个月成功控制了奶茶消费", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Congratulations! You managed to control consumption of milk tea last month.\n" +
+                        "\n", Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -500,14 +501,14 @@ class MainActivity : AppCompatActivity() {
         val dialog = AlertDialog.Builder(this)
             .setTitle("Set Monthly Cup Limit")
             .setView(dialogView)
-            .setPositiveButton("确定") { _, _ ->
+            .setPositiveButton("OK") { _, _ ->
                 val newLimit = numberPicker.value
                 saveCupLimit(newLimit)
                 calculateRemainingCups()
                 updateUI()
-                Toast.makeText(this, "已设置本月奶茶限制为 $newLimit 杯", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "The milk tea limit for this month has been set at $newLimit per cup", Toast.LENGTH_SHORT).show()
             }
-            .setNegativeButton("取消", null)
+            .setNegativeButton("Cancel", null)
             .create()
         
         dialog.show()

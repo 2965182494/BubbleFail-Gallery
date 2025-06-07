@@ -167,10 +167,10 @@ class StatisticsFragment : Fragment() {
         val (firstDayOfMonth, lastDayOfMonth) = getCurrentMonthRange()
         
         // 设置月份标题
-        val monthYearFormat = SimpleDateFormat("yyyy年MM月", Locale.getDefault())
+        val monthYearFormat = SimpleDateFormat("yyyy-MM", Locale.getDefault())
         val monthTitle = monthYearFormat.format(firstDayOfMonth)
         try {
-            monthTitleTextView.text = monthTitle + "统计"
+            monthTitleTextView.text = monthTitle + "statistics"
         } catch (e: Exception) {
             // 如果找不到月份标题视图，忽略错误
         }

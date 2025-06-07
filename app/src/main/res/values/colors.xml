@@ -18,7 +18,7 @@
     <!-- 主界面颜色 -->
     <color name="background_cream">#FFF8E1</color>
     <color name="text_dark">#333333</color>
-    
+
     <!-- 日历界面颜色 -->
     <color name="text_light">#AAAAAA</color>
     <color name="selected_day_bg">#FFCC33</color>

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF1E7"
-    tools:context=".fragment.CalendarFragment">
+    android:background="@color/background_cream"    tools:context=".fragment.CalendarFragment">
 
     <!-- 文本容器 - 保持固定高度 -->
     <androidx.constraintlayout.widget.ConstraintLayout

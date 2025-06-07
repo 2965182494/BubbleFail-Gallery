@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF1E7"
-    tools:context=".activity.CostumeActivity">
+    android:background="@color/background_cream"    tools:context=".activity.CostumeActivity">
 
     <!-- 顶部标题 -->
     <TextView

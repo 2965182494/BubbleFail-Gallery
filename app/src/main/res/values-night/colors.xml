@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 基础颜色反转 -->
+    <color name="black">#FFFFFFFF</color>  <!-- 日间黑色 → 夜间白色 -->
+    <color name="white">#FF121212</color> <!-- 日间白色 → 夜间深灰背景 -->
+
+    <!-- 奶茶主题颜色（降低饱和度，变暗） -->
+    <color name="primary_brown">#5D4D42</color>       <!-- 原 #795548 -->
+    <color name="light_brown">#7A6A60</color>        <!-- 原 #A1887F -->
+    <color name="dark_brown">#4A3A32</color>         <!-- 原 #5D4037 -->
+    <color name="cream">#1E1B18</color>             <!-- 原 #FFF8E1 → 深灰 -->
+    <color name="light_cream">#24211E</color>        <!-- 原 #FFFDE7 → 稍浅深灰 -->
+
+    <!-- 登录页黄色（降低亮度，减少刺眼感） -->
+    <color name="primary_yellow">#FFB300</color>     <!-- 原 #FFCB43 -->
+    <color name="light_yellow">#FFD54F</color>       <!-- 原 #FFE082 -->
+    <color name="dark_yellow">#FF8F00</color>        <!-- 原 #FFA000 -->
+
+    <!-- 主界面颜色 -->
+    <color name="background_cream">#1E1B18</color>   <!-- 原 #FFF8E1 → 深灰 -->
+    <color name="text_dark">#7A7A7A</color>         <!-- 原 #333333 → 浅灰 -->
+
+    <!-- 日历界面颜色 -->
+    <color name="text_light">#757575</color>        <!-- 原 #AAAAAA → 中灰 -->
+    <color name="selected_day_bg">#FFB300</color>    <!-- 原 #FFCC33 → 暗黄 -->
+
+    <!-- 新增颜色 -->z
+    <color name="primary_yellow_light">#2A2620</color> <!-- 原 #FFF9E8 → 深灰 -->
+    <color name="text_dark_50">#80E0E0E0</color>      <!-- 原 #80333333 → 半透明白 -->
+    <color name="text_light_20">#33757575</color>     <!-- 原 #33999999 → 半透明灰 -->
+</resources>

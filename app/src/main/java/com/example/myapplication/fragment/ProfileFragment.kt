@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.myapplication.LoginActivity
@@ -92,10 +93,10 @@ class ProfileFragment : Fragment() {
         // Load user data from SharedPreferences or database
         val sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         val email = sharedPreferences.getString("user_email", "user@example.com") ?: "user@example.com"
-        
+        val theme = sharedPreferences.getString("theme", "") ?: "Light"
         // Set email
         emailTextView.text = email
-        
+        themeValueTextView.text=theme
         // Other data uses default values for now
     }
     
@@ -116,10 +117,14 @@ class ProfileFragment : Fragment() {
                 .setItems(themes) { _, which ->
                     themeValueTextView.text = themes[which]
                     Toast.makeText(context, "Selected ${themes[which]} theme", Toast.LENGTH_SHORT).show()
-                    
+
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    applyTheme(themes[which])
+
                     // Save settings
                     val sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
                     sharedPreferences.edit().putString("theme", themes[which]).apply()
+                    themeValueTextView.text = themes[which]
                 }
                 .show()
         }
@@ -132,7 +137,6 @@ class ProfileFragment : Fragment() {
                 .setItems(languages) { _, which ->
                     languageValueTextView.text = languages[which]
                     Toast.makeText(context, "Selected ${languages[which]}", Toast.LENGTH_SHORT).show()
-                    
                     // Save settings
                     val sharedPreferences = requireContext().getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
                     sharedPreferences.edit().putString("language", languages[which]).apply()
@@ -166,4 +170,18 @@ class ProfileFragment : Fragment() {
                 .show()
         }
     }
+
+    /**
+     * Apply selected theme
+     */
+    private fun applyTheme(theme: String) {
+        val mode = when (theme) {
+            "Light" -> AppCompatDelegate.MODE_NIGHT_NO
+            "Dark" -> AppCompatDelegate.MODE_NIGHT_YES
+            else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        }
+        AppCompatDelegate.setDefaultNightMode(mode)
+    }
+
+
 } 

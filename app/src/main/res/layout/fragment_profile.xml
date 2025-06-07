@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF1E7"
+    android:background="@color/background_cream"
     tools:context=".fragment.ProfileFragment">
 
     <LinearLayout
@@ -229,13 +229,6 @@
                     android:textColor="@color/text_light"
                     android:textSize="14sp" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginStart="8dp"
-                    android:contentDescription="@string/arrow_right"
-                    android:src="@android:drawable/ic_media_play"
-                    app:tint="@color/text_light" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

@@ -22,15 +22,15 @@
     <string name="already_have_account">Already have an account?</string>
     
     <!-- 错误提示 -->
-    <string name="error_email_empty">请输入电子邮件</string>
-    <string name="error_email_invalid">请输入有效的电子邮件</string>
-    <string name="error_password_empty">请输入密码</string>
-    <string name="error_confirm_password_empty">请输入确认密码</string>
-    <string name="error_password_match">密码不匹配</string>
-    <string name="error_login_failed">登录失败，请检查邮箱和密码</string>
-    <string name="error_register">注册失败，请稍后再试</string>
-    <string name="error_email_exists">该邮箱已注册</string>
-    <string name="success_register">注册成功</string>
+    <string name="error_email_empty">Please enter your email.</string>
+    <string name="error_email_invalid">Please enter a valid email address.</string>
+    <string name="error_password_empty">Please enter the password.</string>
+    <string name="error_confirm_password_empty">Please enter the confirmation password.</string>
+    <string name="error_password_match">The passwords do not match.</string>
+    <string name="error_login_failed">Login failed. Please check your email and password.</string>
+    <string name="error_register">Registration failed. Please try again later.</string>
+    <string name="error_email_exists">This email has been registered.</string>
+    <string name="success_register">Registration successful.</string>
     
     <!-- 主界面 -->
     <string name="congratulations">Congratulations!!</string>
@@ -42,9 +42,9 @@
     <string name="bubble_tea_cup">奶茶杯</string>
     
     <!-- 底部导航 -->
-    <string name="home">首页</string>
-    <string name="calendar">日历</string>
-    <string name="add_record">添加记录</string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="add_record">Add record</string>
     <string name="statistics">Statistics</string>
     <string name="profile">Profile</string>
     
@@ -60,27 +60,27 @@
     <string name="bubble_tea_image">Bubble Tea Image</string>
     
     <!-- 添加记录界面 -->
-    <string name="add_bubble_tea_image">添加奶茶图片</string>
+    <string name="add_bubble_tea_image">Add milk tea pictures</string>
     <string name="date">Date</string>
-    <string name="select_date">选择日期</string>
+    <string name="select_date">Select a date</string>
     <string name="name">Name</string>
-    <string name="enter_bubble_tea_name">输入奶茶名称</string>
+    <string name="enter_bubble_tea_name">Enter the name of the milk tea</string>
     <string name="expense">Expense</string>
-    <string name="enter_price">输入价格</string>
+    <string name="enter_price">Enter the price</string>
     <string name="sweetness">Sweetness</string>
-    <string name="enter_sweetness">输入甜度</string>
+    <string name="enter_sweetness">Enter the sweetness level</string>
     <string name="save">Save</string>
-    <string name="record_saved">记录已保存</string>
-    <string name="record_save_failed">保存失败，请重试</string>
+    <string name="record_saved">The record has been saved</string>
+    <string name="record_save_failed">Save failed. Please try again</string>
     
     <!-- 图片上传相关 -->
-    <string name="select_image_source">选择图片来源</string>
-    <string name="take_photo">拍照</string>
-    <string name="choose_from_gallery">从图库选择</string>
-    <string name="permission_required">需要相机和存储权限以便上传奶茶图片</string>
-    <string name="permission_camera_rationale">需要相机权限来拍摄奶茶照片</string>
-    <string name="permission_storage_rationale">需要存储权限来保存奶茶图片</string>
-    <string name="image_save_failed">图片保存失败</string>
+    <string name="select_image_source">Select the image source</string>
+    <string name="take_photo">Take a photo</string>
+    <string name="choose_from_gallery">Select from gallery</string>
+    <string name="permission_required">Camera and storage permissions are required to upload milk tea pictures</string>
+    <string name="permission_camera_rationale">Camera permission is required to take photos of milk tea</string>
+    <string name="permission_storage_rationale">Storage permission is required to save milk tea pictures</string>
+    <string name="image_save_failed">The picture failed to save</string>
     
     <!-- 统计界面 -->
     <string name="overview">Overview</string>
@@ -120,12 +120,12 @@
     <string name="reward_question">Do you want to try a new costume?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="previous_costume">上一个装扮</string>
-    <string name="next_costume">下一个装扮</string>
+    <string name="previous_costume">Previous outfit</string>
+    <string name="next_costume">Next outfit</string>
     <string name="select_costume">Select the current outfit</string>
     
     <!-- 编辑记录相关 -->
-    <string name="edit_record">编辑奶茶记录</string>
-    <string name="record_updated">记录已更新</string>
-    <string name="record_update_failed">记录更新失败</string>
+    <string name="edit_record">Edit milk tea records</string>
+    <string name="record_updated">The record has been updated</string>
+    <string name="record_update_failed">The record update failed</string>
 </resources>

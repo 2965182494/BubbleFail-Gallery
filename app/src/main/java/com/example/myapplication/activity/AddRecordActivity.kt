@@ -198,14 +198,14 @@ class AddRecordActivity : AppCompatActivity() {
             AlertDialog.Builder(this)
                 .setTitle(R.string.permission_required)
                 .setMessage(R.string.permission_storage_rationale)
-                .setPositiveButton("确定") { _, _ ->
+                .setPositiveButton("OK") { _, _ ->
                     ActivityCompat.requestPermissions(
                         this,
                         arrayOf(storagePermission),
                         STORAGE_PERMISSION_REQUEST_CODE
                     )
                 }
-                .setNegativeButton("取消", null)
+                .setNegativeButton("Cancel", null)
                 .show()
         } else {
             // 直接请求权限
@@ -238,7 +238,7 @@ class AddRecordActivity : AppCompatActivity() {
     
     // 打开相册选择图片
     private fun openGallery() {
-        Log.d(TAG, "打开图库选择图片")
+        Log.d(TAG, "Open Gallery Select Picture")
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         pickImageLauncher.launch(intent)
     }
@@ -360,7 +360,7 @@ class AddRecordActivity : AppCompatActivity() {
         
         // 验证输入
         if (date.isEmpty() || name.isEmpty() || expenseStr.isEmpty() || sweetness.isEmpty()) {
-            Toast.makeText(this, "请填写所有字段", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please fill in all the fields", Toast.LENGTH_SHORT).show()
             return
         }
         
@@ -368,7 +368,7 @@ class AddRecordActivity : AppCompatActivity() {
         val expense = try {
             expenseStr.toDouble()
         } catch (e: NumberFormatException) {
-            Toast.makeText(this, "请输入有效的价格", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please enter a valid price", Toast.LENGTH_SHORT).show()
             return
         }
         

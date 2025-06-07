@@ -60,8 +60,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="40dp"
                 android:text="@string/date"
-                android:textColor="@color/text_dark"
+                android:textColor="@color/text_dark_50"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/card_image" />
 
@@ -90,8 +91,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/name"
-                android:textColor="@color/text_dark"
+                android:textColor="@color/text_dark_50"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_date" />
 
@@ -119,8 +121,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/expense"
-                android:textColor="@color/text_dark"
+                android:textColor="@color/text_dark_50"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
@@ -148,8 +151,9 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/sweetness"
-                android:textColor="@color/text_dark"
+                android:textColor="@color/text_dark_50"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_expense" />
 
@@ -165,6 +169,7 @@
                 android:padding="12dp"
                 android:textColor="@color/text_dark"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_sweetness_label" />
@@ -173,15 +178,17 @@
             <Button
                 android:id="@+id/btn_save"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="24dp"
+                android:backgroundTint="@color/primary_yellow"
+                android:fontFamily="@font/lexend"
                 android:text="@string/save"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                android:backgroundTint="@color/primary_yellow"
+                android:textSize="20sp"
+                app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
